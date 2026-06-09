@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Million Dollar Challenge</title>
+</head>
+<body style="background-color: #f0f2f5; font-family: Arial, sans-serif; overflow: hidden; height: 100vh; margin: 0;">
+
+    <div style="text-align: center; padding-top: 150px;">
+        <h2 style="font-size: 28px; color: #333;">Do you want to give me a million dollars?</h2>
+        <button id="yesBtn" style="padding: 12px 28px; font-size: 18px; margin-right: 15px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Yes</button>
+        <button id="noBtn" style="padding: 12px 28px; font-size: 18px; position: absolute; background-color: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">No</button>
+    </div>
+
+    <!-- This links your HTML to the JavaScript brain -->
+    <script src="script.js"></script>
+</body>
+</html>
+const noBtn = document.getElementById('noBtn');
+
+// Triggered whenever the mouse moves over the button
+noBtn.addEventListener('mouseover', () => {
+    // Calculate random screen coordinates, keeping the button visible on screen
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    
+    // Move the button instantly
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+});
+
+// For touch screens where mouseover doesn't trigger
+noBtn.addEventListener('click', () => {
+    alert("Nice try, but you physically cannot click this.");
+});
+
+document.getElementById('yesBtn').addEventListener('click', () => {
+    alert("🎉 Excellent choice! Check your wallet.");
+});
