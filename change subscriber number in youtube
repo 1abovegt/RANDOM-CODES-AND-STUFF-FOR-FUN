@@ -1,0 +1,3 @@
+
+document.designMode="on"
+  document.querySelectorAll('yt-formatted-string, span').forEach(el => { if(el.innerText && el.innerText.includes('subscribers')) el.innerText = '1k subscribers' });
